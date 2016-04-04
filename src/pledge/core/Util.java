@@ -59,11 +59,12 @@ public class Util {
                     prod.push(in);
                 }
                 
-                if (solver.isSatisfiable(prod)) {
+                if (solver.isSatisfiable(prod) && p.getSize() == k) {
                     tsets.add(p);
                 }
             } else {
-                tsets.add(p);
+		if (p.getSize() == k)
+                	tsets.add(p);
             }
             return;
             
